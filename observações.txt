@@ -1,0 +1,4 @@
+1) As páginas "Cursos Ofertados" e "Vagas Ofertadas" não tem necessidade de existir mutualmente, são básicamnete a mesma tabela
+2) "Asimos.py" e "Dashboards.py" precisam existir?
+3) "resultados.csv" e "supermarket_sales.csv" precisam existir?
+4) "Home.py" é na verdade a main do projeto
