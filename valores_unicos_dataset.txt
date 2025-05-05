@@ -1,0 +1,449 @@
+Colunas e seus valores únicos no dataset:
+
+Coluna: Sexo
+  - F
+  - M
+  - N
+
+Coluna: AnoNascimento
+  - 1992.0
+  - 1982.0
+  - 1981.0
+  - 1983.0
+  - 1984.0
+  - 1986.0
+  - 1988.0
+  - 1987.0
+  - 1991.0
+  - 1990.0
+  - 1989.0
+  - 1993.0
+  - 1974.0
+  - 1968.0
+  - 1985.0
+  - 1994.0
+  - 1979.0
+  - 1963.0
+  - 1977.0
+  - 1978.0
+  - 1953.0
+  - 1969.0
+  - 1962.0
+  - 1976.0
+  - 1995.0
+  - 1973.0
+  - 1980.0
+  - 1996.0
+  - 1975.0
+  - 1972.0
+  - 1971.0
+  - 1997.0
+  - 1998.0
+  - 1999.0
+  - 1957.0
+  - 1966.0
+  - 2000.0
+  - 1970.0
+  - 1967.0
+  - 2001.0
+  - 2002.0
+  - 2003.0
+  - 2004.0
+  - 2005.0
+  - 2006.0
+  - 1965.0
+  - 1954.0
+  - 1964.0
+  - 1956.0
+  - 1961.0
+  - 1952.0
+  - 1958.0
+  - 1959.0
+  - 1955.0
+  - 1947.0
+  - 1946.0
+  - 1960.0
+  - 2022.0
+  - 2007.0
+  - 1944.0
+  - 1951.0
+  - 1949.0
+  - 1950.0
+  - 1948.0
+  - 1945.0
+  - 2008.0
+  - 2017.0
+  - 2196.0
+  - 1940.0
+  - 2024.0
+  - 1941.0
+  - 2010.0
+  - 1935.0
+
+Coluna: Raca
+  - Branco(a)
+  - Não informado
+  - Pardo(a)
+  - Preto(a)
+  - Amarelo(a)
+  - Indígena
+  - Estudante não quis declarar cor/raça
+  - Informação não disponível
+
+Coluna: FormaIngresso
+  - Estudante Não Vinculado - Pós Graduação
+  - Vestibular
+  - Portador de Diploma
+  - Mudança de Curso
+  - Processo Seletivo Alternativo - Vestibular
+  - Transferência
+  - SiSU - Sistema de Seleção Unificada
+  - Processo Seletivo Alternativo - SiSU
+  - Transferência Ex-ofício
+  - Rematrícula
+  - SISU - Mandado Judicial
+  - Enem
+  - SISU - Sistema de Seleção Unificada
+  - Convênio - PEC/G
+  - ENEM
+  - Sequência
+  - Programa Especial
+  - DINTER
+  - Sisu
+  - Mobilidade
+  - Estudante Não Vinculado
+  - Estudante Vinculado a outra Instituição - Pós Grad
+  - Estudante Especial
+  - Mobilidade Acadêmica
+  - Plataforma Freire - PAR
+  - ENEM - Mandado Judicial
+  - MINTER
+  - Intercâmbio
+  - Habilitação
+
+Coluna: GrupoCotaConvocado
+  - Não informado ou não se aplica
+  - Ampla concorrência
+  - Estudante de escola pública, Renda familiar mensal maior que 1,5 salários mínimos, Etnia (Autodeclarado Preto, Pardo ou Índio)
+  - Estudante de escola pública, Renda familiar mensal menor ou igual a 1,5 salários mínimos, Outro
+  - Estudante de escola pública, Renda familiar mensal maior que 1,5 salários mínimos, Outro
+  - Estudante de escola pública, Renda familiar mensal menor ou igual a 1,5 salários mínimos, Etnia (Autodeclarado Preto, Pardo ou Índio)
+  - Estudante de escola pública, Renda mensal maior que 1,5 salários mínimos(por pessoa da família), Etnia: Autodeclarado Preto, Pardo ou Índio
+  - Estudante de escola pública, Renda mensal menor ou igual a 1,5 salários mínimos(por pessoa da família), Etnia: Autodeclarado Preto, Pardo ou Índio
+  - Estudante de escola pública, Renda mensal menor ou igual a 1,5 salários mínimos(por pessoa da família), Outro
+  - Estudante de escola pública, Renda mensal maior que 1,5 salários mínimos(por pessoa da família), Outro
+  - Mudança de Curso
+  - Portador de Diploma
+  - Rematrícula
+  - Estudante de escola pública, Renda mensal maior que 1,5 salários mínimos(por pessoa da família)
+  - Estudante de escola pública, Renda mensal menor ou igual a 1,5 salários mínimos(por pessoa da família)
+  - Transferência Externa
+  - Candidatos autodeclarados pretos, pardos ou indígenas que, independentemente da renda (art. 14, II, Portaria Normativa nº 18/2012), tenham cursado integralmente o ensino médio em escolas públicas (Lei nº 12.711/2012)
+  - Candidatos autodeclarados pretos, pardos ou indígenas, com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e que tenham cursado integralmente o ensino médio em escolas públicas (Lei nº 12.711/2012)
+  - Ampla Concorrência
+  - Candidatos com deficiência que, independentemente da renda (art. 14, II, Portaria Normativa nº 18/2012), tenham cursado integralmente o ensino médio em escolas públicas (Lei nº 12.711/2012)
+  - Candidatos que, independentemente da renda (art. 14, II, Portaria Normativa nº 18/2012), tenham cursado integralmente o ensino médio em escolas públicas (Lei nº 12.711/2012)
+  - Candidatos com deficiência autodeclarados pretos, pardos ou indígenas que, independentemente da renda (art. 14, II, Portaria Normativa nº 18/2012), tenham cursado integralmente o ensino médio em escolas públicas (Lei nº 12.711/2012)
+  - Candidatos com renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo que tenham cursado integralmente o ensino médio em escolas públicas (Lei nº 12.711/2012)
+  - Candidatos com deficiência que tenham renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e que tenham cursado integralmente o ensino médio em escolas públicas (Lei nº 12.711/2012)
+  - Candidatos com deficiência autodeclarados pretos, pardos ou indígenas, que tenham renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo e que tenham cursado integralmente o ensino médio em escolas públicas (Lei nº 12.711/2012)
+  - Candidatos autodeclarados pretos, pardos ou indígenas, com renda familiar bruta per capita igual ou inferior a 1 salário mínimo e que tenham cursado integralmente o ensino médio em escolas públicas.
+  - Candidatos com renda familiar bruta per capita igual ou inferior a 1 salário mínimo que tenham cursado integralmente o ensino médio em escolas públicas.
+  - Candidatos autodeclarados quilombolas, com renda familiar bruta per capita igual ou inferior a 1 salário mínimo e que tenham cursado integralmente o ensino médio em escolas públicas.
+  - Candidatos autodeclarados pretos, pardos ou indígenas, independentemente da renda, que tenham cursado integralmente o ensino médio em escolas públicas.
+  - Candidatos que, independentemente da renda, tenham cursado integralmente o ensino médio em escolas públicas.
+  - Candidatos com deficiência que, independentemente da renda, tenham cursado integralmente o ensino médio em escolas públicas.
+  - Candidatos com deficiência, que tenham renda familiar bruta per capita igual ou inferior a 1 salário mínimo e que tenham cursado integralmente o ensino médio em escolas públicas.
+  - Reserva p/ negros (pretos ou pardos) ou indígenas
+  - Reserva p/ pessoa com deficiência
+  - Demanda social
+  - Egressos de escolas do campo
+  - Trabalhadores do campo
+  - Docentes que atuam ou já atuaram em escolas do campo
+  - Índios e quilombolas
+  - Sujeitos com vínculos aos movimentos sociais do campo
+  - Educadores populares ou monitores vinculados à educação do campo
+  - Vagas Reservadas para estudantes de escola pública, pertencente à família com renda mensal maior que 1,5 salário mínimo per capita e autodeclarado Preto, Pardo ou Indígena
+  - Vagas Reservadas para estudantes de escola pública, pertencente à família com renda mensal maior que 1,5 salário mínimo per capita e autodeclarado Outro
+  - Vagas Reservadas para estudantes de escola pública, pertencente à família com renda mensal menor ou igual a 1,5 salário mínimo per capita e autodeclarado Preto, Pardo ou Indígena
+  - Vagas Reservadas para estudantes de escola pública, pertencente à família com renda mensal menor ou igual a 1,5 salário mínimo per capita e autodeclarado Outro
+  - Est. esc. pública, Renda mensal bruta maior a 1,5 salário mínimo (por pessoa da família), Etnia: Pretos, Pardos e Indígenas SEM Deficiência
+  - Est. esc. pública, Renda mensal bruta menor ou igual a 1,5 salário mínimo (por pessoa da família), Etnia: Independente de raça SEM Deficiência
+  - Est. esc. pública, Renda mensal bruta menor ou igual a 1,5 salário mínimo (por pessoa da família), Etnia: Pretos, Pardos e Indígenas SEM Deficiência
+  - Est. esc. pública, Renda mensal bruta maior a 1,5 salário mínimo (por pessoa da família), Etnia: Independente de raça SEM Deficiência
+
+Coluna: AnoAdmissao
+  - 2015
+  - 2010
+  - 2011
+  - 2012
+  - 2013
+  - 2014
+  - 2016
+  - 2017
+  - 2018
+  - 2019
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+  - 2024
+
+Coluna: Curso
+  - Administração
+  - Administração - Integral
+  - Administração - Noturno
+  - Agronegócio
+  - Agronomia
+  - Arquitetura e Urbanismo
+  - Bacharelado em Educação Física
+  - Bioquímica
+  - Ciência da Computação
+  - Ciência e Tecnologia de Alimentos
+  - Ciência e Tecnologia de Laticínios
+  - Ciências Biológicas
+  - Ciências Contábeis
+  - Ciências Econômicas
+  - Ciências Econômicas - Ênfase em Agronegócio
+  - Ciências Econômicas - Ênfase em Economia
+  - Ciências Sociais
+  - Comunicação Social
+  - Cooperativismo
+  - Dança
+  - Direito
+  - Doutorado em Administração
+  - Doutorado em Agroquímica
+  - Doutorado em Arquitetura e Urbanismo
+  - Doutorado em Biologia Animal
+  - Doutorado em Biologia Celular e Estrutural
+  - Doutorado em Bioquímica Agrícola
+  - Doutorado em Bioquímica Aplicada
+  - Doutorado em Botânica
+  - Doutorado em Ciência da Computação
+  - Doutorado em Ciência da Nutrição
+  - Doutorado em Ciência e Tecnologia de Alimentos
+  - Doutorado em Ciência Florestal
+  - Doutorado em Ecologia
+  - Doutorado em Economia Aplicada
+  - Doutorado em Economia Doméstica
+  - Doutorado em Educação Física
+  - Doutorado em Engenharia Agrícola
+  - Doutorado em Engenharia Civil
+  - Doutorado em Entomologia
+  - Doutorado em Estatística Aplicada e Biometria
+  - Doutorado em Extensão Rural
+  - Doutorado em Física
+  - Doutorado em Física Aplicada
+  - Doutorado em Fisiologia Vegetal
+  - Doutorado em Fitopatologia
+  - Doutorado em Fitotecnia
+  - Doutorado em Genética e Melhoramento
+  - Doutorado em Medicina Veterinária
+  - Doutorado em Meteorologia Agrícola
+  - Doutorado em Meteorologia Aplicada
+  - Doutorado em Microbiologia Agrícola
+  - Doutorado em Solos e Nutrição de Plantas
+  - Doutorado em Zootecnia
+  - Doutorado Multicêntrico em Química  de Minas Gerais
+  - Doutorado Multicêntrico em Química de Minas Gerais
+  - Economia Doméstica
+  - Educação Física
+  - Educação Infantil
+  - Enfermagem
+  - Engenharia Agrícola e Ambiental
+  - Engenharia Ambiental
+  - Engenharia Civil
+  - Engenharia de Agrimensura e Cartográfica
+  - Engenharia de Alimentos
+  - Engenharia de Produção
+  - Engenharia Elétrica
+  - Engenharia Florestal
+  - Engenharia Mecânica
+  - Engenharia Química
+  - Estudante em Mobilidade - Pós-Graduação
+  - Estudante Especial - Graduação
+  - Estudante Especial VInculado - Pós-Graduação
+  - Estudante Não VInculado
+  - Estudante Não VInculado - Pós Graduação
+  - Estudante Não VInculado - Pós-Graduação
+  - Estudante Não-Vinculado - Graduação
+  - Estudante Não-Vinculado - Pós-Graduação
+  - Estudante VInculado - Pós-Graduação
+  - Física
+  - Geografia
+  - História
+  - Lato Sensu em Administração Pública Municipal
+  - Lato Sensu em Automação e Controle de Processos
+  - Lato Sensu em Automação e Controle de Processos Agrícolas e Industriais
+  - Lato Sensu em Clínica e Cirurgia Veterinárias
+  - Lato Sensu em Controladoria e Finanças
+  - Lato Sensu em Coordenação Pedagógica
+  - Lato Sensu em Desenvolvimento de Sistemas Para A Internet
+  - Lato Sensu em Educ. Profissional Integrada à Educ. Básica na Modalidade de Educ. de Jovens e Adultos
+  - Lato Sensu em Educação Ambiental com Ênfase em Espaços Educadores Sustentáveis
+  - Lato Sensu em Engenharia de Segurança do Trabalho
+  - Lato Sensu em Futebol
+  - Lato Sensu em Geoprocessamento, Levantamento e Interpretação de Solos
+  - Lato Sensu em Gestão Ambiental
+  - Lato Sensu em Gestão da Educação Municipal
+  - Lato Sensu em Gestão da Produção
+  - Lato Sensu em Gestão de P. Púb. com F. na T. de Gên. e Raça
+  - Lato Sensu em Gestão de P. Púb. com F. na T. do Gên. e Raça
+  - Lato Sensu em Gestão Empresarial e Ambiental
+  - Lato Sensu em Gestão Escolar
+  - Lato Sensu em Gestão Pública
+  - Lato Sensu em Gestão Pública Municipal
+  - Lato Sensu em Inteligência Artificial e Computacional
+  - Lato Sensu em Mba em Gestão Empresarial
+  - Lato Sensu em Nutrição e Saúde
+  - Lato Sensu em Preservação e Difusão de Estruturas e Sítios Arqueológicos A Céu Aberto
+  - Lato Sensu em Proteção de Plantas
+  - Lato Sensu em Recuperação de Áreas Degradadas
+  - Lato Sensu em Residência em Medicina Veterinária
+  - Lato Sensu em Residência Médica Veterinária
+  - Lato Sensu em Sistemas Fotovoltaicos Isolados e Conectados à Rede Elétrica
+  - Lato Sensu em Tecnologia de Celulose e Papel
+  - Letras
+  - Licenciatura em Ciências Biológicas
+  - Licenciatura em Educação do Campo - Ciências da Natureza
+  - Licenciatura em Educação Física
+  - Licenciatura em Física
+  - Licenciatura em História - Ead
+  - Licenciatura em Matemática
+  - Licenciatura em Matemática - Ead
+  - Licenciatura em Pedagogia
+  - Licenciatura em Química
+  - Matemática
+  - Medicina
+  - Medicina Veterinária
+  - Mestrado em Administração
+  - Mestrado em Agroecologia
+  - Mestrado em Agronomia (Produção Vegetal)
+  - Mestrado em Agroquímica
+  - Mestrado em Arquitetura e Urbanismo
+  - Mestrado em Biologia Animal
+  - Mestrado em Biologia Celular e Estrutural
+  - Mestrado em Bioquímica Agrícola
+  - Mestrado em Bioquímica Aplicada
+  - Mestrado em Botânica
+  - Mestrado em Ciência da Computação
+  - Mestrado em Ciência da Nutrição
+  - Mestrado em Ciência e Tecnologia de Alimentos
+  - Mestrado em Ciência Florestal
+  - Mestrado em Ecologia
+  - Mestrado em Economia
+  - Mestrado em Economia Aplicada
+  - Mestrado em Economia Doméstica
+  - Mestrado em Educação
+  - Mestrado em Educação Física
+  - Mestrado em Engenharia Agrícola
+  - Mestrado em Engenharia Civil
+  - Mestrado em Engenharia Química
+  - Mestrado em Entomologia
+  - Mestrado em Estatística Aplicada e Biometria
+  - Mestrado em Extensão Rural
+  - Mestrado em Física
+  - Mestrado em Física Aplicada
+  - Mestrado em Fisiologia Vegetal
+  - Mestrado em Fitopatologia
+  - Mestrado em Fitotecnia
+  - Mestrado em Genética e Melhoramento
+  - Mestrado em Geografia
+  - Mestrado em Letras
+  - Mestrado em Manejo e Conservação de Ecossistemas Naturais e Agrários
+  - Mestrado em Matemática
+  - Mestrado em Medicina Veterinária
+  - Mestrado em Meteorologia Agrícola
+  - Mestrado em Meteorologia Aplicada
+  - Mestrado em Microbiologia Agrícola
+  - Mestrado em Solos e Nutrição de Plantas
+  - Mestrado em Zootecnia
+  - Mestrado Multicêntrico em Química de Minas Gerais
+  - Mestrado Profissional em Administração Pública em Rede Nacional
+  - Mestrado Profissional em Ciências da Saúde
+  - Mestrado Profissional em Defesa Sanitária Vegetal
+  - Mestrado Profissional em Educação em Ciências e Matemática
+  - Mestrado Profissional em Ensino de Física
+  - Mestrado Profissional em Matemática em Rede Nacional
+  - Mestrado Profissional em Patrimônio Cultural, Paisagens e Cidadania
+  - Mestrado Profissional em Química em Rede Nacional
+  - Mestrado Profissional em Tecnologia de Celulose e Papel
+  - Mestrado Profissional em Zootecnia
+  - Mobilidade Acadêmica - Graduação
+  - Mobilidade Acadêmica - Pós-Graduação
+  - Mobilidade Acadêmica - Promover
+  - Mobilidade Acadêmica Pós-Graduação
+  - Nutrição
+  - Pedagogia
+  - Pesquisador Colaborador
+  - Pós-Doutorado
+  - Programa de Residência Médica
+  - Química
+  - Secretariado Executivo Trilíngue, Português, Francês, Inglês
+  - Serviço Social
+  - Sistemas de Informação - Integral
+  - Sistemas de Informação - Noturno
+  - Tecnologia em Análise e Desenvolvimento de Sistemas
+  - Tecnologia em Gestão Ambiental
+  - Zootecnia
+
+Coluna: NivelAgrupado
+  - Graduação
+  - Pós-Graduação
+
+Coluna: AreaCurso
+  - Ciências Humanas, Letras e Artes
+  - Ciências Agrárias
+  - Ciências Exatas e Tenológicas
+  - Ciências Biológicas e da Saúde
+  - Não informado
+
+Coluna: Turno
+  - Noturno
+  - Integral
+  - Diurno
+  - Não informado
+  - EAD
+
+Coluna: SituacaoAluno
+  - Término
+  - Conclusão
+  - Desligamento
+  - Abandono
+  - Mudança de Curso
+  - Falecimento
+  - Normal
+  - Concluiu as exigências do curso (não colou grau)
+  - Trancamento
+  - Estudante em abandono do curso
+  - Transferência
+  - Concluinte (não colou grau)
+  - Exclusão
+  - Estudante em mobilidade
+  - Desligamento com processo aberto
+  - Afastamento Especial
+  - Anulação de Matrícula
+  - Matrícula Condicional/Reconsideração desligamento
+  - Matrícula Condicional/Reconsideração Desligamento
+  - Afastamento/Intercâmbio
+  - Concluindo (não colou grau)
+  - Afastamento/Reconsideração de Desligamento
+  - Concluinte (relatório não analisado)
+  - Situação Provisória
+  - Aguardando correções da Dissertação/Tese
+  - Matrícula Suspensa Temporariamente
+  - Afastamento
+  - Titulação cassada
+  - Habilitação
+
+Coluna: SituacaoAlunoAgrupada
+  - Evasão
+  - Conclusão
+  - Retenção
+  - Matriculado
+
+Coluna: Campus
+  - Rio Paranaíba
+  - Viçosa
+  - Florestal
+

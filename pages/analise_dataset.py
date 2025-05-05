@@ -23,7 +23,26 @@ def carregar_dados():
     ])
     return df
 
+def salvar_colunas_e_valores_unicos(df, caminho_arquivo="valores_unicos_dataset.txt"):
+    colunas_ignoradas = {"CodigoEstudante", "Naturalidade", "UF", "Pais"}
+    
+    with open(caminho_arquivo, "w", encoding="utf-8") as f:
+        f.write("Colunas e seus valores únicos no dataset:\n\n")
+        for coluna in df.columns:
+            if coluna in colunas_ignoradas:
+                continue  # Ignora as colunas especificadas
+            f.write(f"Coluna: {coluna}\n")
+            unicos = df[coluna].dropna().unique()
+            for valor in unicos:
+                f.write(f"  - {valor}\n")
+            f.write("\n")
+    print(f"Arquivo '{caminho_arquivo}' gerado com sucesso.")
+
+
+
 df = carregar_dados()
+salvar_colunas_e_valores_unicos(df)
+
 
 # Título principal
 st.title("Dashboard de Matrículas Anuais")
@@ -143,6 +162,8 @@ if not df_filtered.empty:
             st.plotly_chart(fig_linhas, use_container_width=True)
 else:
     st.warning("Nenhum dado encontrado com os filtros selecionados.")
+
+
 
 # Mostrar dados filtrados
 with st.expander("📊 Visualizar Dados Filtrados"):
