@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 st.title("Análise de Retenção de Alunos")
 
 # Carregar os dados
-df = pd.read_csv('alunos-ingressantes.csv', sep=';', encoding='latin-1')
+df = pd.read_csv('datasets\\alunos-ingressantes.csv', sep=';', encoding='latin-1')
 
 # Sidebar com filtros
 st.sidebar.header("Filtros")

@@ -7,7 +7,7 @@ st.set_page_config(layout="wide", page_title="Dashboard de Matrículas")
 # Carregando os dados
 @st.cache_data
 def carregar_dados():
-    df = pd.read_csv('alunos-ingressantes.csv', sep=';', encoding='latin-1')
+    df = pd.read_csv('datasets\alunos-ingressantes.csv', sep=';', encoding='latin-1')
     df["Curso"] = df["Curso"].replace([
         "Física - Licenciatura", 
         "Matemática - Licenciatura",

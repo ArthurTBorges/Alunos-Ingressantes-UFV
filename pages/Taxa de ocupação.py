@@ -4,7 +4,47 @@ import plotly.express as px
 
 # Configuração da página
 st.set_page_config(layout="wide")
-st.title("Taxa de Ocupação - Campus Florestal")
+
+# Carregar os dados
+df = pd.read_csv('datasets\\alunos-ingressantes.csv', sep=';', encoding='latin-1')
+
+# Sidebar com filtros
+st.sidebar.header("Filtros")
+
+# Filtro por campus
+campus_options = df["Campus"].dropna().unique().tolist()
+campus_options.sort()
+selected_campus = st.sidebar.selectbox("Selecione o campus:", campus_options)
+
+# Filtrar dados pelo campus selecionado
+df = df[df["Campus"] == selected_campus]
+
+if df.empty:
+    st.warning(f"Nenhum dado encontrado para o campus {selected_campus}.")
+    st.stop()
+
+# Título da página
+st.title(f"Taxa de Ocupação - Campus {selected_campus}")
+
+# Filtro por nível de curso
+nivel_options = df["NivelAgrupado"].unique().tolist()
+selected_nivel = st.sidebar.multiselect("Selecione o nível:", nivel_options, default=nivel_options)
+
+# Filtro por período
+min_year = int(df["AnoAdmissao"].min())
+max_year = int(df["AnoAdmissao"].max())
+year_range = st.sidebar.slider("Selecione o período:", min_year, max_year, (min_year, max_year))
+
+# Aplicar filtros
+filtered_df = df[
+    (df["NivelAgrupado"].isin(selected_nivel)) &
+    (df["AnoAdmissao"].between(year_range[0], year_range[1]))
+]
+
+# Verificar se há dados após os filtros
+if filtered_df.empty:
+    st.warning("Nenhum dado encontrado com os filtros selecionados.")
+    st.stop()
 
 # Dados de vagas por curso
 vagas = {
@@ -15,54 +55,66 @@ vagas = {
 }
 vagas_df = pd.DataFrame(vagas)
 
-# Mostrar tabela de vagas
-st.subheader("Vagas por Curso no Campus Florestal")
-st.table(vagas_df)
+# ----------- NOVO GRÁFICO GERAL POR CAMPUS --------------
 
-# Carregar os dados
-df = pd.read_csv('alunos-ingressantes.csv', sep=';', encoding='latin-1')
+st.subheader("Taxa de Ocupação Geral por Campus")
 
-# Filtrar apenas para o campus Florestal
-df_florestal = df[df['Campus'] == 'Florestal']
+# Alunos que permaneceram
+alunos_permanentes_total = filtered_df[~filtered_df['SituacaoAlunoAgrupada'].isin(['Evasão', 'Abandono', 'Desligamento'])]
 
-# Verificar se há dados
-if df_florestal.empty:
-    st.warning("Nenhum dado encontrado para o campus Florestal.")
-    st.stop()
+# Agrupamento geral por ano
+ocupacao_geral = alunos_permanentes_total.groupby(['AnoAdmissao']).size().reset_index(name='Alunos')
 
-# Sidebar com filtros
-st.sidebar.header("Filtros")
+# Vagas totais por ano (soma das vagas definidas na lista)
+vagas_totais_por_ano = vagas_df['Nº de vagas'].sum()
+ocupacao_geral['Nº de vagas'] = vagas_totais_por_ano
 
-# Filtro por nível de curso
-nivel_options = df_florestal["NivelAgrupado"].unique().tolist()
-selected_nivel = st.sidebar.multiselect("Selecione o nível:", nivel_options, default=nivel_options)
+# Calcular taxa
+ocupacao_geral['Taxa Ocupação (%)'] = (ocupacao_geral['Alunos'] / ocupacao_geral['Nº de vagas']) * 100
+ocupacao_geral['Taxa Ocupação (%)'] = ocupacao_geral['Taxa Ocupação (%)'].round(1)
 
-# Filtro por período
-min_year = int(df_florestal["AnoAdmissao"].min())
-max_year = int(df_florestal["AnoAdmissao"].max())
-year_range = st.sidebar.slider("Selecione o período:", min_year, max_year, (min_year, max_year))
+# Gráfico geral
+fig_geral = px.bar(
+    ocupacao_geral,
+    x='AnoAdmissao',
+    y=['Alunos', 'Nº de vagas'],
+    barmode='group',
+    title='Taxa de Ocupação Geral por Ano',
+    labels={'AnoAdmissao': 'Ano de Admissão', 'value': 'Quantidade'},
+    text_auto=True
+)
 
-# Aplicar filtros
-filtered_df = df_florestal[
-    (df_florestal["NivelAgrupado"].isin(selected_nivel)) &
-    (df_florestal["AnoAdmissao"].between(year_range[0], year_range[1]))
-]
+fig_geral.add_scatter(
+    x=ocupacao_geral['AnoAdmissao'],
+    y=ocupacao_geral['Taxa Ocupação (%)'],
+    mode='lines+markers+text',
+    name='Taxa Ocupação (%)',
+    yaxis='y2',
+    text=ocupacao_geral['Taxa Ocupação (%)'],
+    textposition='top center'
+)
 
-# Verificar se há dados após filtrar
-if filtered_df.empty:
-    st.warning("Nenhum dado encontrado com os filtros selecionados.")
-    st.stop()
+fig_geral.update_layout(
+    yaxis=dict(title='Quantidade de Alunos/Vagas'),
+    yaxis2=dict(
+        title='Taxa Ocupação (%)',
+        overlaying='y',
+        side='right',
+        range=[0, 120]
+    )
+)
 
-# Análise de ocupação por curso e ano
-st.header("Taxa de Ocupação por Curso")
+st.plotly_chart(fig_geral, use_container_width=True)
 
-# Calcular alunos que permaneceram (não evadiram)
+# ----------- ANÁLISE DETALHADA POR CURSO ----------------
+
+# Alunos que permaneceram
 alunos_permanentes = filtered_df[~filtered_df['SituacaoAlunoAgrupada'].isin(['Evasão', 'Abandono', 'Desligamento'])]
 
 # Agrupar por curso e ano
 ocupacao_por_curso = alunos_permanentes.groupby(['Curso', 'AnoAdmissao']).size().reset_index(name='Alunos')
 
-# Juntar com os dados de vagas
+# Juntar com dados de vagas
 ocupacao_por_curso = pd.merge(ocupacao_por_curso, vagas_df, on='Curso', how='left')
 
 # Calcular taxa de ocupação
@@ -73,27 +125,12 @@ ocupacao_por_curso['Taxa Ocupação (%)'] = ocupacao_por_curso['Taxa Ocupação 
 curso_options = ocupacao_por_curso['Curso'].unique().tolist()
 selected_curso = st.selectbox("Selecione um curso para análise detalhada:", curso_options)
 
-# Gráfico de linha para taxa de ocupação geral
-st.subheader("Evolução da Taxa de Ocupação")
-fig_geral = px.line(
-    ocupacao_por_curso,
-    x='AnoAdmissao',
-    y='Taxa Ocupação (%)',
-    color='Curso',
-    title='Taxa de Ocupação por Curso ao Longo dos Anos',
-    labels={'AnoAdmissao': 'Ano de Admissão', 'Taxa Ocupação (%)': 'Taxa de Ocupação (%)'}
-)
-st.plotly_chart(fig_geral, use_container_width=True)
-
-# Análise detalhada por curso selecionado
+# Análise detalhada
 st.subheader(f"Análise Detalhada: {selected_curso}")
-
-# Filtrar dados para o curso selecionado
 curso_selecionado = ocupacao_por_curso[ocupacao_por_curso['Curso'] == selected_curso]
 
-# Verificar se há dados
 if not curso_selecionado.empty:
-    # Gráfico de barras para o curso selecionado
+    # Gráfico de barras
     fig_curso = px.bar(
         curso_selecionado,
         x='AnoAdmissao',
@@ -103,8 +140,8 @@ if not curso_selecionado.empty:
         labels={'AnoAdmissao': 'Ano de Admissão', 'value': 'Quantidade'},
         text_auto=True
     )
-    
-    # Adicionar linha da taxa de ocupação
+
+    # Linha com taxa de ocupação
     fig_curso.add_scatter(
         x=curso_selecionado['AnoAdmissao'],
         y=curso_selecionado['Taxa Ocupação (%)'],
@@ -114,31 +151,26 @@ if not curso_selecionado.empty:
         text=curso_selecionado['Taxa Ocupação (%)'],
         textposition='top center'
     )
-    
-    # Configurar eixo secundário
+
     fig_curso.update_layout(
         yaxis=dict(title='Quantidade de Alunos/Vagas'),
         yaxis2=dict(
             title='Taxa Ocupação (%)',
             overlaying='y',
             side='right',
-            range=[0, 120]  # Fixar escala até 120% para visualização
+            range=[0, 120]
         )
     )
-    
+
     st.plotly_chart(fig_curso, use_container_width=True)
-    
-    # Mostrar métricas recentes
+
+    # Métricas do último ano
     ultimo_ano = curso_selecionado['AnoAdmissao'].max()
     dados_ultimo_ano = curso_selecionado[curso_selecionado['AnoAdmissao'] == ultimo_ano].iloc[0]
-    
+
     col1, col2, col3 = st.columns(3)
     col1.metric("Número de Vagas", dados_ultimo_ano['Nº de vagas'])
     col2.metric("Alunos Permanentes", dados_ultimo_ano['Alunos'])
     col3.metric("Taxa de Ocupação", f"{dados_ultimo_ano['Taxa Ocupação (%)']}%")
 else:
     st.warning(f"Não há dados de ocupação para o curso {selected_curso}")
-
-# Mostrar dados completos
-st.subheader("Dados Completos de Ocupação")
-st.dataframe(ocupacao_por_curso.sort_values(['Curso', 'AnoAdmissao']))

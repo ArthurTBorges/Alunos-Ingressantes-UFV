@@ -5,7 +5,7 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 
 
-dfAM = pd.read_csv('Alunos Matriculados.csv', sep=';',encoding='latin-1')
+dfAM = pd.read_csv('datasets\Alunos Matriculados.csv', sep=';',encoding='latin-1')
 dfAM['Áreas/Cursos'] = dfAM['Áreas/Cursos'].str.strip()
 
 data_dfAD = dfAM.groupby(['Ano', 'Áreas/Cursos']).agg(avg_age=('Ano', 'mean'), count1=('Dip. Sem. 1 Total', 'sum'),

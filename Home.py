@@ -4,7 +4,7 @@ import plotly.express as px
 
 st.set_page_config(layout="wide")
 
-df = pd.read_csv('alunos-ingressantes.csv', sep=';',encoding='latin-1')
+df = pd.read_csv('datasets\\alunos-ingressantes.csv', sep=';',encoding='latin-1')
 
 df["Curso"]=df["Curso"].replace(["Física - Licenciatura", "Matemática - Licenciatura","Química - Licenciatura","Educação Física - Licenciatura","Ciências Biológicas - Licenciatura"],["Física", "Matemática","Química","Educação Física","Ciências Biológicas"])
 
